@@ -8,7 +8,6 @@ class AuthService {
   myUser _userFromFirebaseUser(User user) {
     return user != null ? myUser(displayName: user.displayName) : null;
   }
-  String lib;
 
   // auth change user stream
   Stream<myUser> get user {
@@ -30,6 +29,17 @@ class AuthService {
   //sign in with email & password
 
   //register with email & password
+  Future registerWithEmailAndPassword(String email, String password) async {
+    try{
+      UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      User user = result.user;
+      print(_userFromFirebaseUser(user));
+      return _userFromFirebaseUser(user); 
+    } catch (e){
+      print(e.toString());
+      return null;
+    }
+  }
 
   //sign out
   Future signOut() async {
