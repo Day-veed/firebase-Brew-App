@@ -35,7 +35,7 @@ class _RegisterState extends State<Register> {
             onPressed: (){
               widget.toggleView();
             },
-          )
+          ),
         ],
       ),
       body: Container(
