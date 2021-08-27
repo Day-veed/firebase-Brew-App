@@ -57,7 +57,7 @@ class _RegisterState extends State<Register> {
                 validator: (val) => val.length <6 ? 'Enter a password 6+ chars long' : null,
                 onChanged: (val){
                   setState(() => password = val);
-                },
+                }
               ),
               SizedBox(height: 20.0),
               RaisedButton(
