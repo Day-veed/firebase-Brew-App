@@ -7,7 +7,7 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   myUser _userFromFirebaseUser(User user) {
-    return user != null ? myUser(displayName: user.displayName) : null;
+    return user != null ? myUser(uid: user.uid) : null;
   }
 
   // auth change user stream
